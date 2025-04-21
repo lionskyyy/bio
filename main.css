@@ -1,0 +1,64 @@
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover;
+}
+
+.avatar.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(183, 0, 255, 0.8);
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(183, 0, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(183, 0, 255, 0.8);
+  }
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: box-shadow 0.6s ease;
+  object-fit: cover;
+}
+
+.avatar.active {
+  box-shadow: 0 0 25px rgba(183, 0, 255, 0.8);
+  animation:
+    grow 0.6s ease forwards,
+    spin 10s linear infinite,
+    pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1.2) rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(183, 0, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(183, 0, 255, 0.8);
+  }
+}

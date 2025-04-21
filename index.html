@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>lionskyyy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("solitude-moon-night-3840x2160-22085.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(12px) brightness(0.3);
+      z-index: -1;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      max-width: 400px;
+      width: 90%;
+      transition: all 0.3s ease;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 1.2em;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 8px 0;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      transition: transform 0.3s ease, background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    .links img {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .links a {
+        font-size: 0.9em;
+        padding: 10px 16px;
+      }
+
+      .links img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="124451123.png" alt="Avatar" class="avatar">
+    <h1>lionskyyy</h1>
+    <p>14 years old<br>Main langs: C++, Python</p>
+    <div class="links">
+      <a href="https://t.me/w9itt" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" alt="Telegram">
+        Telegram Chat
+      </a>
+      <a href="https://t.me/lionskyyyy" target="_blank">
+        <img src="redtg.png" alt="Red Telegram">
+        Telegram Channel
+      </a>
+      <a href="https://ru.pinterest.com/lionskyyy/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest">
+        Pinterest
+        <a href="https://github.com/loydddevv" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+            GitHub
+          </a>
+          </script>
+          
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+    const avatar = document.querySelector('.avatar');
+    avatar.addEventListener('click', () => {
+      avatar.classList.toggle('active');
+    });
+  </script>
+  
