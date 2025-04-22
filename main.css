@@ -112,3 +112,6 @@
   filter: blur(0);
   pointer-events: auto;
 }
+.section.active {
+  z-index: 5;
+}

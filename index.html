@@ -163,16 +163,20 @@
   </body>
 </html>
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
     const avatar = document.querySelector('.avatar');
     avatar.addEventListener('click', () => {
       avatar.classList.toggle('active');
     });
-  </script>
-<script>
-  function switchSection(id) {
-    document.querySelectorAll('.section').forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(id + '-section').classList.add('active');
-  }
+
+    function switchSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id + '-section').classList.add('active');
+    }
+
+    // Делаем доступной функцию глобально
+    window.switchSection = switchSection;
+  });
 </script>
