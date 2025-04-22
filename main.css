@@ -62,3 +62,53 @@
     box-shadow: 0 0 35px rgba(183, 0, 255, 0.8);
   }
 }
+.section-buttons {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.section-buttons button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-buttons button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.sections-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  filter: blur(10px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.active {
+  opacity: 1;
+  filter: blur(0);
+  pointer-events: auto;
+}

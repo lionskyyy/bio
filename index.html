@@ -118,32 +118,49 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="124451123.png" alt="Avatar" class="avatar">
-    <h1>lionskyyy</h1>
-    <p>14 years old<br>Main langs: C++, Python</p>
-    <div class="links">
-      <a href="https://t.me/w9itt" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" alt="Telegram">
-        Telegram Chat
-      </a>
-      <a href="https://t.me/lionskyyyy" target="_blank">
-        <img src="redtg.png" alt="Red Telegram">
-        Telegram Channel
-      </a>
-      <a href="https://ru.pinterest.com/lionskyyy/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest">
-        Pinterest
-        <a href="https://github.com/lionskyyy" target="_blank">
+  <div class="section-buttons">
+    <button onclick="switchSection('bio')">Био</button>
+    <button onclick="switchSection('projects')">Проекты</button>
+  </div>
+  
+  <div class="sections-wrapper">
+    <div id="bio-section" class="section active">
+      <div class="container">
+        <img src="124451123.png" alt="Avatar" class="avatar" />
+        <h1>lionskyyy</h1>
+        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python</p>
+        <div class="links">
+          <a href="https://t.me/w9itt" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" alt="Telegram">
+            Telegram Chat
+          </a>
+          <a href="https://t.me/lionskyyyy" target="_blank">
+            <img src="redtg.png" alt="Red Telegram">
+            Telegram Channel
+          </a>
+          <a href="https://ru.pinterest.com/lionskyyy/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest">
+            Pinterest
+          </a>
+          <a href="https://github.com/lionskyyy" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
             GitHub
           </a>
-          </script>
-          
-      </a>
+        </div>
+      </div>
+    </div>
+  
+    <div id="projects-section" class="section">
+      <div class="container">
+        <h1>There's nothing here yet...</h1>
+        <div class="project-card">
+          <h2></h2>
+          <p>Follow my social networks to stay up to date with all the events 🫡</p>
+        </div>
+      </div>
     </div>
   </div>
-</body>
+  </body>
 </html>
 <script>
     const avatar = document.querySelector('.avatar');
@@ -151,4 +168,11 @@
       avatar.classList.toggle('active');
     });
   </script>
-  
+<script>
+  function switchSection(id) {
+    document.querySelectorAll('.section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id + '-section').classList.add('active');
+  }
+</script>
