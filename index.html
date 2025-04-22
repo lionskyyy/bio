@@ -123,6 +123,102 @@
         height: 18px;
       }
     }
+
+    .section-buttons button {
+      background: linear-gradient(135deg, #1e002c, #22002c); /* Dark purple gradient */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .section-buttons button:hover {
+      background: linear-gradient(135deg, #22002c, #26002c); /* Slightly darker gradient on hover */
+      transform: scale(1.05);
+    }
+
+    .section-buttons button:active,
+    .section-buttons button.active {
+      box-shadow: 0 0 15px 5px rgba(31, 0, 46, 0.8); /* Purple glow */
+      transform: scale(1.1);
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 1000;
+    }
+
+    .popup.visible {
+      display: block;
+    }
+
+    .popup-content {
+      text-align: center;
+    }
+
+    .popup-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .popup-buttons button {
+      background: linear-gradient(135deg, #1e002c, #22002c);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .popup-buttons button:hover {
+      background: linear-gradient(135deg, #22002c, #26002c);
+      transform: scale(1.05);
+    }
+
+    .popup-buttons button:active {
+      box-shadow: 0 0 15px 5px rgba(31, 0, 46, 0.8);
+      transform: scale(1.1);
+    }
+
+    .popup.heart {
+      animation: heartBeat 1s ease;
+    }
+
+    .popup.dismiss {
+      animation: dismiss 1s ease;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    @keyframes dismiss {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -132,7 +228,7 @@
   </div>
 
   <div class="section-buttons">
-    <button onclick="switchSection('bio')">Bio</button>
+    <button class="active" onclick="switchSection('bio')">Bio</button>
     <button onclick="switchSection('projects')">Projects</button>
   </div>
   
@@ -141,7 +237,7 @@
       <div class="container">
         <img src="124451123.png" alt="Avatar" class="avatar" />
         <h1>lionskyyy</h1>
-        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python</p>
+        <p>14 years old<br><br>Hobbies: programming, design<br><br>Main langs: C++, Python</p>
         <div class="links">
           <div class="link-wrapper">
             <a href="https://t.me/w9itt" target="_blank">
@@ -170,7 +266,7 @@
           <div class="link-wrapper">
             <a href="https://t.me/anonaskbot?start=__o5ZJd2gRC79yb" target="_blank">
               <img src="tg_anon.png" alt="Telegram Anonymous">
-              Telegram anonymous chat
+              Telegram Anonymous Chat
             </a>
             <button class="copy-link" title="Copy link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
@@ -217,6 +313,7 @@
       </div>
     </div>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const avatar = document.querySelector('.avatar');
@@ -235,6 +332,12 @@
           section.classList.remove('active');
         });
         document.getElementById(id + '-section').classList.add('active');
+
+        // Update button glow
+        document.querySelectorAll('.section-buttons button').forEach(button => {
+          button.classList.remove('active');
+        });
+        document.querySelector(`.section-buttons button[onclick="switchSection('${id}')"]`).classList.add('active');
       }
 
       // Обработчик для копирования ссылок
