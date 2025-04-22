@@ -53,8 +53,8 @@
     }
 
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       margin: 0 auto 20px;
       object-fit: cover;
@@ -71,12 +71,19 @@
       margin-bottom: 1.2em;
     }
 
+    .links .link-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 8px 0;
+      position: relative;
+    }
+
     .links a {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 8px 0;
       padding: 12px 20px;
       border-radius: 30px;
       text-decoration: none;
@@ -84,6 +91,7 @@
       color: #fff;
       transition: transform 0.3s ease, background 0.3s ease;
       font-weight: 600;
+      flex: 1;
     }
 
     .links a:hover {
@@ -130,22 +138,66 @@
         <h1>lionskyyy</h1>
         <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python</p>
         <div class="links">
-          <a href="https://t.me/w9itt" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" alt="Telegram">
-            Telegram Chat
-          </a>
-          <a href="https://t.me/lionskyyyy" target="_blank">
-            <img src="redtg.png" alt="Red Telegram">
-            Telegram Channel
-          </a>
-          <a href="https://ru.pinterest.com/lionskyyy/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest">
-            Pinterest
-          </a>
-          <a href="https://github.com/lionskyyy" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
-            GitHub
-          </a>
+          <div class="link-wrapper">
+            <a href="https://t.me/w9itt" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/5968/5968804.png" alt="Telegram">
+              Telegram Chat
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="link-wrapper">
+            <a href="https://t.me/lionskyyyy" target="_blank">
+              <img src="redtg.png" alt="Red Telegram">
+              Telegram Channel
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="link-wrapper">
+            <a href="https://t.me/anonaskbot?start=__o5ZJd2gRC79yb" target="_blank">
+              <img src="tg_anon.png" alt="Telegram Anonymous">
+              Telegram anonymous chat
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="link-wrapper">
+            <a href="https://ru.pinterest.com/lionskyyy/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest">
+              Pinterest
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="link-wrapper">
+            <a href="https://github.com/lionskyyy" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+              GitHub
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -160,23 +212,38 @@
       </div>
     </div>
   </div>
-  </body>
-</html>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const avatar = document.querySelector('.avatar');
-    avatar.addEventListener('click', () => {
-      avatar.classList.toggle('active');
-    });
-
-    function switchSection(id) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const avatar = document.querySelector('.avatar');
+      avatar.addEventListener('click', () => {
+        avatar.classList.toggle('active');
       });
-      document.getElementById(id + '-section').classList.add('active');
-    }
 
-    // Делаем доступной функцию глобально
-    window.switchSection = switchSection;
-  });
-</script>
+      function switchSection(id) {
+        document.querySelectorAll('.section').forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(id + '-section').classList.add('active');
+      }
+
+      // Обработчик для копирования ссылок
+      document.querySelectorAll('.copy-link').forEach(button => {
+        button.addEventListener('click', () => {
+          const link = button.previousElementSibling.getAttribute('href');
+          navigator.clipboard.writeText(link).then(() => {
+            button.classList.add('copied');
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 6L9 17L4 12"></path></svg>';
+            setTimeout(() => {
+              button.classList.remove('copied');
+              button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            }, 2000);
+          });
+        });
+      });
+
+      // Делаем доступной функцию глобально
+      window.switchSection = switchSection;
+    });
+  </script>
+</body>
+</html>
