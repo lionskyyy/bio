@@ -126,6 +126,11 @@
   </style>
 </head>
 <body>
+  <!-- Вступительная анимация -->
+  <div class="intro-overlay" id="introOverlay">
+    <img src="white_arrow.png" alt="White Arrow" />
+  </div>
+
   <div class="section-buttons">
     <button onclick="switchSection('bio')">Bio</button>
     <button onclick="switchSection('projects')">Projects</button>
@@ -219,6 +224,12 @@
         avatar.classList.toggle('active');
       });
 
+      // Управление вступительной анимацией
+      const introOverlay = document.getElementById('introOverlay');
+      setTimeout(() => {
+        introOverlay.classList.add('hidden');
+      }, 1100); // Исчезновение начинается за 0.4с до конца вращения (1.2с - 0.4с)
+
       function switchSection(id) {
         document.querySelectorAll('.section').forEach(section => {
           section.classList.remove('active');
@@ -245,5 +256,6 @@
       window.switchSection = switchSection;
     });
   </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93468b85fbb678cc',t:'MTc0NTMzOTgzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
