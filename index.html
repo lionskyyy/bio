@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>lionskyyy</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+  
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #000;
       color: #fff;
       height: 100vh;
@@ -26,7 +26,6 @@
       overflow: hidden;
       position: relative;
     }
-
     body::before {
       content: "";
       position: absolute;
@@ -34,7 +33,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("solitude-moon-night-3840x2160-22085.png");
+      background-image: url("background.png");
       background-size: cover;
       background-position: center;
       filter: blur(12px) brightness(0.3);
@@ -125,7 +124,7 @@
     }
 
     .section-buttons button {
-      background: linear-gradient(135deg, #1e002c, #22002c); /* Dark purple gradient */
+      background: linear-gradient(135deg, #2c0c00, #2c1400); /* Dark purple gradient */
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -135,13 +134,13 @@
     }
 
     .section-buttons button:hover {
-      background: linear-gradient(135deg, #22002c, #26002c); /* Slightly darker gradient on hover */
+      background: linear-gradient(135deg, #2c0c00, #2c1400); /* Slightly darker gradient on hover */
       transform: scale(1.05);
     }
 
     .section-buttons button:active,
     .section-buttons button.active {
-      box-shadow: 0 0 15px 5px rgba(31, 0, 46, 0.8); /* Purple glow */
+      box-shadow: 0 0 15px 5px rgba(255, 81, 58, 0.8); /* Purple glow */
       transform: scale(1.1);
     }
 
@@ -219,9 +218,21 @@
         opacity: 0;
       }
     }
+
+    /* Modify smooth rotation and opacity transition for section switches */
+    .section {
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      transform: perspective(600px) rotateY(90deg);
+      opacity: 0;
+    }
+    .section.active {
+      transform: perspective(600px) rotateY(0deg);
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  
   <!-- Вступительная анимация -->
   <div class="intro-overlay" id="introOverlay">
     <img src="white_logo.svg" alt="White Arrow" />
@@ -235,9 +246,9 @@
   <div class="sections-wrapper">
     <div id="bio-section" class="section active">
       <div class="container">
-        <img src="124451123.png" alt="Avatar" class="avatar" />
-        <h1>lionskyyy</h1>
-        <p>14 years old<br><br>Hobbies: programming, design<br><br>Main langs: C++, Python</p>
+        <img src="avatar.png" alt="Avatar" class="avatar" />
+        <h1 translate="no">lionskyyy</h1>
+        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python</p>
         <div class="links">
           <div class="link-wrapper">
             <a href="https://t.me/w9itt" target="_blank">
@@ -325,7 +336,7 @@
       const introOverlay = document.getElementById('introOverlay');
       setTimeout(() => {
         introOverlay.classList.add('hidden');
-      }, 1100); // Исчезновение начинается за 0.4с до конца вращения (1.2с - 0.4с)
+      }, 1000); // Исчезновение начинается за 0.4с до конца вращения (1.2с - 0.4с)
 
       function switchSection(id) {
         document.querySelectorAll('.section').forEach(section => {
