@@ -124,7 +124,7 @@
     }
 
     .section-buttons button {
-      background: linear-gradient(135deg, #2c0c00, #2c1400); /* Dark purple gradient */
+      background: linear-gradient(135deg, #2c0c00, #2c1400);
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -134,13 +134,13 @@
     }
 
     .section-buttons button:hover {
-      background: linear-gradient(135deg, #2c0c00, #2c1400); /* Slightly darker gradient on hover */
+      background: linear-gradient(135deg, #2c0c00, #2c1400); 
       transform: scale(1.05);
     }
 
     .section-buttons button:active,
     .section-buttons button.active {
-      box-shadow: 0 0 15px 5px rgba(255, 81, 58, 0.8); /* Purple glow */
+      box-shadow: 0 0 15px 5px rgba(255, 81, 58, 0.8); 
       transform: scale(1.1);
     }
 
@@ -219,7 +219,6 @@
       }
     }
 
-    /* Modify smooth rotation and opacity transition for section switches */
     .section {
       transition: transform 0.6s ease, opacity 0.6s ease;
       transform: perspective(600px) rotateY(90deg);
@@ -233,7 +232,6 @@
 </head>
 <body>
   
-  <!-- Вступительная анимация -->
   <div class="intro-overlay" id="introOverlay">
     <img src="white_logo.svg" alt="White Arrow" />
   </div>
@@ -332,11 +330,11 @@
         avatar.classList.toggle('active');
       });
 
-      // Управление вступительной анимацией
+      
       const introOverlay = document.getElementById('introOverlay');
       setTimeout(() => {
         introOverlay.classList.add('hidden');
-      }, 1000); // Исчезновение начинается за 0.4с до конца вращения (1.2с - 0.4с)
+      }, 1000); 
 
       function switchSection(id) {
         document.querySelectorAll('.section').forEach(section => {
@@ -344,14 +342,12 @@
         });
         document.getElementById(id + '-section').classList.add('active');
 
-        // Update button glow
         document.querySelectorAll('.section-buttons button').forEach(button => {
           button.classList.remove('active');
         });
         document.querySelector(`.section-buttons button[onclick="switchSection('${id}')"]`).classList.add('active');
       }
 
-      // Обработчик для копирования ссылок
       document.querySelectorAll('.copy-link').forEach(button => {
         button.addEventListener('click', () => {
           const link = button.previousElementSibling.getAttribute('href');
@@ -366,7 +362,6 @@
         });
       });
 
-      // Делаем доступной функцию глобально
       window.switchSection = switchSection;
     });
   </script>
