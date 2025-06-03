@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const introOverlay = document.getElementById('introOverlay');
     setTimeout(() => {
         introOverlay.classList.add('hidden');
-    }, 1000);
+    }, 1800);
 
     function switchSection(id) {
         document.querySelectorAll('.section').forEach(section => {
