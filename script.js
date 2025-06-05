@@ -40,3 +40,4 @@ setTimeout(() => {
 
     window.switchSection = switchSection;
 });
+// chto
