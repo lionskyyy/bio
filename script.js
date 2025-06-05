@@ -4,10 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
         avatar.classList.toggle('active');
     });
 
-    const introOverlay = document.getElementById('introOverlay');
-    setTimeout(() => {
-        introOverlay.classList.add('hidden');
-    }, 1800);
+const introOverlay = document.getElementById('introOverlay');
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const delayTime = isMobile ? 2000 : 1800;
+
+setTimeout(() => {
+    introOverlay.classList.add('hidden');
+}, delayTime);
 
     function switchSection(id) {
         document.querySelectorAll('.section').forEach(section => {
