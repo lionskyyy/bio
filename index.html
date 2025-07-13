@@ -28,17 +28,34 @@
       position: relative;
     }
     body::before {
-      content: "";
-      position: absolute;
+      display: none;
+    }
+
+    .background-video {
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("background.png");
-      background-size: cover;
-      background-position: center;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
       filter: blur(12px) brightness(0.3);
+      pointer-events: none;
+    }
+
+    .vignette {
+      pointer-events: none;
+      position: fixed;
       z-index: -1;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: radial-gradient(ellipse at center, rgba(132, 0, 255, 0.226) 60%, rgba(0,0,0,0.7) 100%);
+      opacity: 0.5;
+      animation: vignette-fade 2s infinite alternate;
+    }
+    @keyframes vignette-fade {
+      0%   { opacity: 0.35; }
+      50%  { opacity: 0.85; }
+      100% { opacity: 0.35; }
     }
 
     .container {
@@ -50,6 +67,13 @@
       max-width: 400px;
       width: 90%;
       transition: all 0.3s ease;
+      animation: card-sway 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes card-sway {
+      0%   { transform: rotate(-1deg) translateY(0); }
+      50%  { transform: rotate(0.5deg) translateY(4px); }
+      100% { transform: rotate(-0.5deg) translateY(0); }
     }
 
     .avatar {
@@ -58,7 +82,7 @@
       border-radius: 50%;
       margin: 0 auto 20px;
       object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.3);
+      border: 3px solid rgb(116, 10, 255, 0.24);
     }
 
     h1 {
@@ -66,9 +90,13 @@
       margin-bottom: 0.2em;
     }
 
-    p {
+    .container p {
       font-size: 1.1em;
       margin-bottom: 1.2em;
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      /* Poppins 400 — тонкий, но не совсем light */
     }
 
     .links .link-wrapper {
@@ -109,7 +137,7 @@
         font-size: 1.7em;
       }
 
-      p {
+      .container p {
         font-size: 1em;
       }
 
@@ -232,7 +260,10 @@
   </style>
 </head>
 <body>
-  
+  <video class="background-video" src="background.mp4" autoplay loop muted playsinline></video>
+  <!-- Виньетка -->
+  <div class="vignette"></div>
+
   <div class="intro-overlay" id="introOverlay">
     <video id="introVideo" src="bio_intro.mp4" autoplay muted playsinline></video>
   </div>
@@ -247,10 +278,10 @@
       <div class="container">
         <img src="avatar.png" alt="Avatar" class="avatar" />
         <h1 translate="no">lionskyyy</h1>
-        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python</p>
+        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python<br>Games: CS2, Geometry Dash, DeepSeek</p>
         <div class="links">
           <div class="link-wrapper">
-            <a href="https://t.me/w9itt" target="_blank">
+            <a href="https://t.me/lnsk6" target="_blank">
               <img src="telegram.png" alt="Telegram">
               Telegram Chat
             </a>
@@ -328,6 +359,21 @@
     </div>
   </div>
 
+  <script>
+     
+  </script>
+</body>
+</html>
+
 <script src="script.js"></script>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const bgVideo = document.querySelector('.background-video');
+    if (bgVideo) {
+      bgVideo.playbackRate = 2.0;
+    }
+  });
+</script>
 </body>
 </html>
