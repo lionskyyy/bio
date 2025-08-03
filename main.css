@@ -19,7 +19,7 @@
     transform: scale(1.2) rotate(0deg);
   }
   100% {
-    transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(100deg);
   }
 }
 
@@ -47,7 +47,7 @@
   border: none;
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Сделать жирным */
+  font-weight: 700; 
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;

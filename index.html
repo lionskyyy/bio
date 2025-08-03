@@ -249,19 +249,18 @@
     }
 
     .section {
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      transform: perspective(600px) rotateY(90deg);
+      transition: transform 0.8s ease, opacity 0.6s ease;
+      transform: perspective(600px) rotateX(30deg) rotateY(80deg);
       opacity: 0;
     }
     .section.active {
-      transform: perspective(600px) rotateY(0deg);
+      transform: perspective(600px) rotateX(0deg) rotateY(0deg);
       opacity: 1;
     }
   </style>
 </head>
 <body>
   <video class="background-video" src="background.mp4" autoplay loop muted playsinline></video>
-  <!-- Виньетка -->
   <div class="vignette"></div>
 
   <div class="intro-overlay" id="introOverlay">
@@ -346,21 +345,34 @@
   
     <div id="projects-section" class="section">
       <div class="container">
-        <h1>There's nothing here yet...</h1>
+        <img src="avatar_studio.png" alt="Avatar" class="avatar" />
+        <h1>lnsk6 – Design Studio</h1>
         <div class="project-card">
           <h2></h2>
 <p>
-  Follow my social networks to stay up to date with all the events
-  <img src="https://em-content.zobj.net/thumbs/240/apple/354/smiling-face-with-halo_1f607.png" alt="😇" style="width: 20px; vertical-align: top;">
+  Beautiful avatars, profile design, bio site to order
+  <img src="https://em-content.zobj.net/thumbs/240/apple/354/smiling-face-with-halo_1f607.png" alt="😇" style="width: 20px; vertical-align: baseline;">
 </p>
-
+<div class="links">
+          <div class="link-wrapper">
+            <a href="https://t.me/lnsk1" target="_blank">
+              <img src="telegram.png" alt="Telegram">
+              Telegram Channel
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+</div>
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-     
+  <script>    
   </script>
 </body>
 </html>
