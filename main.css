@@ -10,7 +10,7 @@
 
 .avatar.active {
   transform: scale(1.2) rotate(360deg);
-  box-shadow: 0 0 25px rgba(174, 0, 255, 0.534);
+  box-shadow: 0 0 25px rgba(174, 0, 255, 0.8); /* насыщенный фиолетовый */
   animation: spin 10s linear infinite, pulse-glow 2s ease-in-out infinite;
 }
 
@@ -25,10 +25,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 25px rgba(174, 0, 255, 0); /* фиолетовый, прозрачный */
   }
   50% {
-    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 35px rgba(174, 0, 255, 1); /* фиолетовый, ярко */
   }
 }
 

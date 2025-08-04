@@ -250,7 +250,7 @@
 
     .section {
       transition: transform 0.8s ease, opacity 0.6s ease;
-      transform: perspective(600px) rotateX(30deg) rotateY(80deg);
+      transform: perspective(600px) rotateX(40deg) rotateY(90deg) scale(0.5);
       opacity: 0;
     }
     .section.active {
@@ -372,20 +372,16 @@
     </div>
   </div>
 
-  <script>    
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bgVideo = document.querySelector('.background-video');
+      if (bgVideo) {
+        bgVideo.playbackRate = 2.0;
+      }
+    });
   </script>
 </body>
-</html>
-
-<script src="script.js"></script>
-<script>
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const bgVideo = document.querySelector('.background-video');
-    if (bgVideo) {
-      bgVideo.playbackRate = 2.0;
-    }
-  });
 </script>
 </body>
 </html>
