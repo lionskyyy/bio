@@ -10,11 +10,8 @@
 
 .avatar.active {
   transform: scale(1.2) rotate(360deg);
-<<<<<<< HEAD
   box-shadow: 0 0 25px rgba(77, 0, 112, 0.8);
-=======
-  box-shadow: 0 0 25px rgba(174, 0, 255, 0.8); /* насыщенный фиолетовый */
->>>>>>> ee38f3b77cb80d8b3f1f19a26a19a3239a4d6d33
+  box-shadow: 0 0 25px rgba(174, 0, 255, 0.8);
   animation: spin 10s linear infinite, pulse-glow 2s ease-in-out infinite;
 }
 
@@ -29,17 +26,14 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-<<<<<<< HEAD
     box-shadow: 0 0 25px rgba(174, 0, 255, 0);
   }
   50% {
     box-shadow: 0 0 35px rgb(82, 0, 121);
-=======
-    box-shadow: 0 0 25px rgba(174, 0, 255, 0); /* фиолетовый, прозрачный */
+    box-shadow: 0 0 25px rgba(174, 0, 255, 0); 
   }
   50% {
-    box-shadow: 0 0 35px rgba(174, 0, 255, 1); /* фиолетовый, ярко */
->>>>>>> ee38f3b77cb80d8b3f1f19a26a19a3239a4d6d33
+    box-shadow: 0 0 35px rgba(174, 0, 255, 1);
   }
 }
 
@@ -58,11 +52,8 @@
   border: none;
   color: white;
   font-family: 'Montserrat', sans-serif;
-<<<<<<< HEAD
   font-weight: 700;
-=======
   font-weight: 700; 
->>>>>>> ee38f3b77cb80d8b3f1f19a26a19a3239a4d6d33
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
