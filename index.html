@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.svg">  
+  <link rel="icon" type="image/x-icon" href="favicon.svg">
   <link rel="stylesheet" href="main.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>lionskyyy</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-  
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-  
     body {
       font-family: 'Poppins', sans-serif;
       background: #000;
@@ -30,7 +28,6 @@
     body::before {
       display: none;
     }
-
     .background-video {
       position: fixed;
       top: 0;
@@ -42,7 +39,6 @@
       filter: blur(12px) brightness(0.3);
       pointer-events: none;
     }
-
     .vignette {
       pointer-events: none;
       position: fixed;
@@ -57,7 +53,6 @@
       50%  { opacity: 0.85; }
       100% { opacity: 0.35; }
     }
-
     .container {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 30px 20px;
@@ -69,13 +64,11 @@
       transition: all 0.3s ease;
       animation: card-sway 3s ease-in-out infinite alternate;
     }
-
     @keyframes card-sway {
       0%   { transform: rotate(-1deg) translateY(0); }
       50%  { transform: rotate(0.5deg) translateY(4px); }
       100% { transform: rotate(-0.5deg) translateY(0); }
     }
-
     .avatar {
       width: 120px;
       height: 120px;
@@ -84,21 +77,17 @@
       object-fit: cover;
       border: 3px solid rgb(116, 10, 255, 0.24);
     }
-
     h1 {
       font-size: 2em;
       margin-bottom: 0.2em;
     }
-
     .container p {
       font-size: 1.1em;
       margin-bottom: 1.2em;
       line-height: 1.7;
       font-weight: 400;
       letter-spacing: 0.01em;
-      /* Poppins 400 — тонкий, но не совсем light */
     }
-
     .links .link-wrapper {
       display: flex;
       align-items: center;
@@ -106,7 +95,6 @@
       margin: 8px 0;
       position: relative;
     }
-
     .links a {
       display: flex;
       align-items: center;
@@ -121,37 +109,30 @@
       font-weight: 600;
       flex: 1;
     }
-
     .links a:hover {
       background: rgba(255, 255, 255, 0.3);
       transform: scale(1.05);
     }
-
     .links img {
       width: 20px;
       height: 20px;
     }
-
     @media (max-width: 480px) {
       h1 {
         font-size: 1.7em;
       }
-
       .container p {
         font-size: 1em;
       }
-
       .links a {
         font-size: 0.9em;
         padding: 10px 16px;
       }
-
       .links img {
         width: 18px;
         height: 18px;
       }
     }
-
     .section-buttons button {
       background: linear-gradient(135deg, #00082c, #01002c);
       color: #fff;
@@ -161,18 +142,15 @@
       cursor: pointer;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
-
     .section-buttons button:hover {
-      background: linear-gradient(135deg, #0c002c, #070029); 
+      background: linear-gradient(135deg, #0c002c, #070029);
       transform: scale(1.05);
     }
-
     .section-buttons button:active,
     .section-buttons button.active {
-      box-shadow: 0 0 15px 5px rgba(58, 94, 255, 0.356); 
+      box-shadow: 0 0 15px 5px rgba(58, 94, 255, 0.356);
       transform: scale(1.1);
     }
-
     .popup {
       position: fixed;
       top: 50%;
@@ -185,21 +163,17 @@
       display: none;
       z-index: 1000;
     }
-
     .popup.visible {
       display: block;
     }
-
     .popup-content {
       text-align: center;
     }
-
     .popup-buttons {
       display: flex;
       justify-content: space-around;
       margin-top: 20px;
     }
-
     .popup-buttons button {
       background: linear-gradient(135deg, #1e002c, #22002c);
       color: #fff;
@@ -209,25 +183,20 @@
       cursor: pointer;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
-
     .popup-buttons button:hover {
       background: linear-gradient(135deg, #22002c, #26002c);
       transform: scale(1.05);
     }
-
     .popup-buttons button:active {
       box-shadow: 0 0 15px 5px rgba(31, 0, 46, 0.8);
       transform: scale(1.1);
     }
-
     .popup.heart {
       animation: heartBeat 1s ease;
     }
-
     .popup.dismiss {
       animation: dismiss 1s ease;
     }
-
     @keyframes heartBeat {
       0%, 100% {
         transform: translate(-50%, -50%) scale(1);
@@ -236,7 +205,6 @@
         transform: translate(-50%, -50%) scale(1.1);
       }
     }
-
     @keyframes dismiss {
       0% {
         transform: translate(-50%, -50%) scale(1);
@@ -247,7 +215,6 @@
         opacity: 0;
       }
     }
-
     .section {
       transition: transform 0.8s ease, opacity 0.6s ease;
       transform: perspective(600px) rotateX(40deg) rotateY(90deg) scale(0.5);
@@ -262,16 +229,13 @@
 <body>
   <video class="background-video" src="background.mp4" autoplay loop muted playsinline></video>
   <div class="vignette"></div>
-
   <div class="intro-overlay" id="introOverlay">
     <video id="introVideo" src="bio_intro.mp4" autoplay muted playsinline></video>
   </div>
-
   <div class="section-buttons">
     <button class="active" onclick="switchSection('bio')">Bio</button>
     <button onclick="switchSection('projects')">Projects</button>
   </div>
-  
   <div class="sections-wrapper">
     <div id="bio-section" class="section active">
       <div class="container">
@@ -342,7 +306,6 @@
         </div>
       </div>
     </div>
-  
     <div id="projects-section" class="section">
       <div class="container">
         <img src="avatar_studio.png" alt="Avatar" class="avatar" />
@@ -371,7 +334,10 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> ee38f3b77cb80d8b3f1f19a26a19a3239a4d6d33
   <script src="script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -380,6 +346,19 @@
         bgVideo.playbackRate = 2.0;
       }
     });
+<<<<<<< HEAD
+  </script>
+</body>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bgVideo = document.querySelector('.background-video');
+      if (bgVideo) {
+        bgVideo.playbackRate = 2.0;
+      }
+    });
+=======
+>>>>>>> ee38f3b77cb80d8b3f1f19a26a19a3239a4d6d33
   </script>
 </body>
 </script>
