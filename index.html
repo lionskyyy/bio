@@ -1,234 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="icon" type="image/x-icon" href="favicon.svg">
   <link rel="stylesheet" href="main.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>lionskyyy</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #000;
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
-    body::before {
-      display: none;
-    }
-    .background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -2;
-      filter: blur(12px) brightness(0.3);
-      pointer-events: none;
-    }
-    .vignette {
-      pointer-events: none;
-      position: fixed;
-      z-index: -1;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: radial-gradient(ellipse at center, rgba(132, 0, 255, 0.226) 60%, rgba(0,0,0,0.7) 100%);
-      opacity: 0.5;
-      animation: vignette-fade 2s infinite alternate;
-    }
-    @keyframes vignette-fade {
-      0%   { opacity: 0.35; }
-      50%  { opacity: 0.85; }
-      100% { opacity: 0.35; }
-    }
-    .container {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
-      max-width: 400px;
-      width: 90%;
-      transition: all 0.3s ease;
-      animation: card-sway 3s ease-in-out infinite alternate;
-    }
-    @keyframes card-sway {
-      0%   { transform: rotate(-1deg) translateY(0); }
-      50%  { transform: rotate(0.5deg) translateY(4px); }
-      100% { transform: rotate(-0.5deg) translateY(0); }
-    }
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      object-fit: cover;
-      border: 3px solid rgb(116, 10, 255, 0.24);
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.2em;
-    }
-    .container p {
-      font-size: 1.1em;
-      margin-bottom: 1.2em;
-      line-height: 1.7;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-    .links .link-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 8px 0;
-      position: relative;
-    }
-    .links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      transition: transform 0.3s ease, background 0.3s ease;
-      font-weight: 600;
-      flex: 1;
-    }
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-    }
-    .links img {
-      width: 20px;
-      height: 20px;
-    }
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.7em;
-      }
-      .container p {
-        font-size: 1em;
-      }
-      .links a {
-        font-size: 0.9em;
-        padding: 10px 16px;
-      }
-      .links img {
-        width: 18px;
-        height: 18px;
-      }
-    }
-    .section-buttons button {
-      background: linear-gradient(135deg, #00082c, #01002c);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .section-buttons button:hover {
-      background: linear-gradient(135deg, #0c002c, #070029);
-      transform: scale(1.05);
-    }
-    .section-buttons button:active,
-    .section-buttons button.active {
-      box-shadow: 0 0 15px 5px rgba(58, 94, 255, 0.356);
-      transform: scale(1.1);
-    }
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      display: none;
-      z-index: 1000;
-    }
-    .popup.visible {
-      display: block;
-    }
-    .popup-content {
-      text-align: center;
-    }
-    .popup-buttons {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-    .popup-buttons button {
-      background: linear-gradient(135deg, #1e002c, #22002c);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .popup-buttons button:hover {
-      background: linear-gradient(135deg, #22002c, #26002c);
-      transform: scale(1.05);
-    }
-    .popup-buttons button:active {
-      box-shadow: 0 0 15px 5px rgba(31, 0, 46, 0.8);
-      transform: scale(1.1);
-    }
-    .popup.heart {
-      animation: heartBeat 1s ease;
-    }
-    .popup.dismiss {
-      animation: dismiss 1s ease;
-    }
-    @keyframes heartBeat {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-    }
-    @keyframes dismiss {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(0.5);
-        opacity: 0;
-      }
-    }
-    .section {
-      transition: transform 0.8s ease, opacity 0.6s ease;
-      transform: perspective(600px) rotateX(40deg) rotateY(90deg) scale(0.5);
-      opacity: 0;
-    }
-    .section.active {
-      transform: perspective(600px) rotateX(0deg) rotateY(0deg);
-      opacity: 1;
-    }
-  </style>
 </head>
+
 <body>
   <video class="background-video" src="background.mp4" autoplay loop muted playsinline></video>
-  <div class="vignette"></div>
   <div class="intro-overlay" id="introOverlay">
     <video id="introVideo" src="bio_intro.mp4" autoplay muted playsinline></video>
   </div>
@@ -241,7 +23,7 @@
       <div class="container">
         <img src="avatar.png" alt="Avatar" class="avatar" />
         <h1 translate="no">lionskyyy</h1>
-        <p>14 years old<br>Hobbies: programming, design<br>Main langs: C++, Python, Russian, English<br>Games: CS2, Geometry Dash, DeepSeek</p>
+        <p>14 years old<br>Hobbies: design, programming<br>Main langs: HTML, Python, C++<br>Games: CS2, Geometry Dash</p>
         <div class="links">
           <div class="link-wrapper">
             <a href="https://t.me/lnsk6" target="_blank">
@@ -311,7 +93,6 @@
         <img src="avatar_studio.png" alt="Avatar" class="avatar" />
         <h1>lnsk6 – Design Studio</h1>
         <div class="project-card">
-          <h2></h2>
 <p>
   Beautiful avatars, profile design, bio site to order
   <img src="https://em-content.zobj.net/thumbs/240/apple/354/smiling-face-with-halo_1f607.png" alt="😇" style="width: 20px; vertical-align: baseline;">
@@ -329,6 +110,19 @@
               </svg>
             </button>
           </div>
+            <div class="link-wrapper">
+            <a href="https://t.me/lnsk6_bot" target="_blank">
+              <img src="telegram.png" alt="Telegram">
+              Telegram Bot
+            </a>
+            <button class="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+
 </div>
         </div>
       </div>
@@ -353,7 +147,6 @@
       }
     });
   </script>
-</body>
 </script>
 </body>
 </html>
